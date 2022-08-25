@@ -1,6 +1,18 @@
 /**
 Author: Steve De bonheur 
 Licence: Free to use
+
+USAGE: 
+httpRequestObservable.pipe(
+      filter((httpEvent) => httpEvent instanceof HttpResponseBase),
+      retryIf(
+        (httpEvent) =>
+          httpEvent instanceof HttpResponseBase && httpEvent.status === ApiStatusCode.RequestBeingProcessing,
+        { retryDelay: 1000, retryCount: 3 }
+      )
+    );
+  }
+
 */
 import { Observable, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
