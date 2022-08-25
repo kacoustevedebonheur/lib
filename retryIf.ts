@@ -1,3 +1,7 @@
+/**
+Author: Steve De bonheur 
+Licence: Free to use
+*/
 import { Observable, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
