@@ -2,6 +2,10 @@
 Author: Steve De bonheur 
 Licence: Free to use
 
+Description: 
+
+Ressayer une requête http selon une condition qui se base sur la réponse http. 
+
 USAGE: 
 httpRequestObservable.pipe(
       filter((httpEvent) => httpEvent instanceof HttpResponseBase),
@@ -13,7 +17,11 @@ httpRequestObservable.pipe(
     );
   }
 
+- RetryDelay: Délai entre deux tentatives
+- RetryCount: Nombre de tentatives
+
 */
+
 import { Observable, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
